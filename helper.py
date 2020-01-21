@@ -29,7 +29,7 @@ def preprocess_and_save_data(dataset_path, token_lookup, create_lookup_tables):
     token_dict = token_lookup()
     for key, token in token_dict.items():
         text = text.replace(key, ' {} '.format(token))
-
+    text = text.replace("'", "")
     text = text.lower()
     text = text.split()
 
